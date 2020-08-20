@@ -1,0 +1,27 @@
+<h3>Admin Login</h3>
+<div *ngIf="loginForm.getError('Wrong Credentials')" class="ui  red basic label">
+  Wrong Username or Password provided
+</div>
+<div *ngIf="loginForm.getError('Unable to login')" class="ui red basic label">
+Network Issue,Unable to Login ,
+</div>
+<div *ngIf="loginForm.getError('ASI')" class="ui red basic label">
+  Already Logged In from another Device
+  </div>
+<form  (ngSubmit)="submit()" [formGroup]="loginForm" class="ui inverted form">
+  <app-input-comp
+    label="Username"
+    [control]="loginForm.get('name')"
+    inputType="text"
+  >
+  </app-input-comp>
+  <app-input-comp
+    label="Password"
+    [control]="loginForm.get('pass')"
+    [inputType]="'password'"
+  ></app-input-comp>
+  
+    <button class="ui submit button">Login</button>
+
+</form>
+

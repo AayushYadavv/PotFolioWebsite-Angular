@@ -1,0 +1,267 @@
+<ng-container>
+  <div class="ui compact inverted fixed menu" *ngIf="mobileView">
+    <div class="ui simple inverted dropdown item">
+      <img class="circular image" src="../assets/123.jpeg" />
+      <b style="padding-left: 7px;">{{ admin }}</b>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a
+          routerLink="./"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="offAdmin()"
+          class="item"
+          routerLinkActive="active"
+          >Home</a
+        >
+        <a
+          routerLink="/projects"
+          (click)="offAdmin()"
+          class="item"
+          routerLinkActive="active"
+          >Projects</a
+        >
+        <a
+          routerLink="/certificate"
+          (click)="offAdmin()"
+          class="item"
+          routerLinkActive="active"
+          >Certifications</a
+        >
+        <a
+          routerLink="/technews"
+          (click)="offAdmin()"
+          class="item"
+          routerLinkActive="active"
+          >TechNews</a
+        >
+        <a
+          routerLink="/feedback"
+          (click)="offAdmin()"
+          class="item"
+          routerLinkActive="active"
+          >FeedBacks</a
+        >
+        <a
+          routerLink="/blogs"
+          (click)="offAdmin()"
+          class="item"
+          routerLinkActive="active"
+          >Blogs</a
+        >
+        <a
+          *ngIf="loggedin$ | async"
+          class="item"
+          routerLink="/admin"
+          (click)="onAdmin()"
+          routerLinkActive="active"
+        >
+          <div class="ui primary button">Admin Panel</div></a
+        >
+        <a
+          *ngIf="loggedin$ |async"
+          class="item"
+          (click)="logout()"
+          routerLink="/logout"
+          routerLinkActive="active"
+        >
+          <div class="ui primary button">Log out</div></a
+        >
+        <a
+          *ngIf="!(loggedin$ |async)"
+          routerLink="/login"
+          class="item"
+          
+
+          (click)="onAdmin()"
+          routerLinkActive="active"
+        >
+          <div class="ui primary button">Admin Login</div></a
+        >
+      </div>
+    </div>
+
+    <div class="inverted item" style="margin-right: 0px; align-items: center;">
+      <!-- <img class="circular image" src="../assets/123.jpeg" /> -->
+      <a href="https://www.linkedin.com/in/aayush-yadav-854082124/"
+        ><img class="ui mini spaced image" src="../assets/linkdin.png"
+      /></a>
+      <a href="https://github.com/AayushYadavv">
+        <img class="ui mini spaced image" src="../assets/git.png"
+      /></a>
+      <a href="https://www.instagram.com/yadavji_aayush/">
+        <img class="ui mini spaced image" src="../assets/insta.png"
+      /></a>
+    </div>
+  </div>
+
+  <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment">
+      <app-profile-card></app-profile-card>
+      <!-- <div class="ui text container">
+        <h1 class="ui inverted header">
+          Welcome !
+        </h1>
+
+        <h2>Quote Goes there</h2>
+        
+      </div> -->
+    </div>
+  </div>
+  <div class="ui stackable fixed huge inverted menu" *ngIf="!mobileView">
+    <div class="item">
+      <img class="circular image" src="../assets/123.jpeg" />
+      <b style="padding: 10px;">{{ admin }}</b>
+    </div>
+
+    <a
+      routerLink="./"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="offAdmin()"
+      class="item"
+      routerLinkActive="active"
+      >Home</a
+    >
+    <a
+      routerLink="/projects"
+      (click)="offAdmin()"
+      class="item"
+      routerLinkActive="active"
+      >Projects</a
+    >
+    <a
+      routerLink="/certificate"
+      (click)="offAdmin()"
+      class="item"
+      routerLinkActive="active"
+      >Certifications</a
+    >
+    <a
+      routerLink="/technews"
+      (click)="offAdmin()"
+      class="item"
+      routerLinkActive="active"
+      >TechNews</a
+    >
+    <a
+      routerLink="/feedback"
+      (click)="offAdmin()"
+      class="item"
+      routerLinkActive="active"
+      >FeedBacks</a
+    >
+    <a
+      routerLink="/blogs"
+      (click)="offAdmin()"
+      class="item"
+      routerLinkActive="active"
+      >Blogs</a
+    >
+    <div class="right menu">
+      <a class="item" href="https://www.linkedin.com/in/aayush-yadav-854082124/"
+        ><img class="ui mini spaced image" src="../assets/linkdin.png"
+      /></a>
+      <a class="item" href="https://github.com/AayushYadavv">
+        <img class="ui mini spaced image" src="../assets/git.png"
+      /></a>
+      <a class="item" href="https://www.instagram.com/yadavji_aayush/">
+        <img class="ui mini spaced image" src="../assets/insta.png"
+      /></a>
+      <a
+        *ngIf="!(loggedin$ |async)"
+        routerLink="/login"
+        class="item"
+        (click)="onAdmin()"
+
+        routerLinkActive="active"
+      >
+        <div class="ui primary button">Admin Login</div></a
+      >
+      <a
+        *ngIf="loggedin$ | async"
+        routerLink="/admin"
+        class="item"
+        (click)="onAdmin()"
+        routerLinkActive="active"
+      >
+        <div class="ui primary button">Admin Panel</div></a
+      >
+
+      <a
+        *ngIf="loggedin$ |async"
+        class="item"
+        routerLink="/logout"
+        (click)="logout()"
+        routerLinkActive="active"
+      >
+        <div class="ui primary button">Logout</div></a
+      >
+    </div>
+  </div>
+
+  <div class="ui stackable grid">
+    <div class="row">
+      <div
+        *ngIf="!adminPanelActive && !mobileView"
+        [ngClass]="{
+          four: !adminPanelActive,
+          wide: !adminPanelActive,
+          column: !adminPanelActive,
+          hidden: adminPanelActive
+        }"
+      >
+        <div [ngClass]="{ hidden: adminPanelActive, ss: !adminPanelActive }">
+          <div class="box">
+            <img
+              class="ui medium circular image"
+              src="https://images.unsplash.com/photo-1597521786505-aa0665dfe817?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        [ngClass]="{
+          eight: !adminPanelActive,
+          sixteen: adminPanelActive,
+          wide: true,
+          column: true
+        }"
+      >
+        <div class="ui container">
+          <div class="ui inverted segment">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="!adminPanelActive"
+        [ngClass]="{
+          four: !adminPanelActive,
+          wide: !adminPanelActive,
+          column: !adminPanelActive,
+          hidden: adminPanelActive
+        }"
+      >
+        <div class="ui compact segment">
+          <app-blog-comp></app-blog-comp>
+
+          <div class="box">
+            <div class="ui placeholder">
+              <div class="paragraph">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+              <div class="paragraph">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
