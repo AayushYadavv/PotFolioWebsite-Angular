@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule} from '@angular/forms'
 
@@ -19,6 +19,8 @@ import { TabchildnavComponent } from './tabchildnav/tabchildnav.component';
     ReactiveFormsModule
   
   ],
+ 
   exports:[InputCompComponent,BlogCompComponent,AccordianComponent,TabchildnavComponent]
+  
 })
 export class LoginMModule { }

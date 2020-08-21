@@ -11,10 +11,10 @@ import { ChgprofileComponent} from './chgprofile/chgprofile.component'
 
 const routes: Routes = [
   {path:'',component:AdminhomeComponent,children:[
-    {path:'addblog',component:AddblogComponent},
-    {path:'delblog',component:DelblogComponent},
-    {path: 'addcerti',component:AddcertiComponent},
-    {path:'delcerti',component:DelcertiComponent},
+    {path:'addblog',component:AddblogComponent,outlet:'blog'},
+    {path:'delblog',component:DelblogComponent,outlet:'blog'},
+    {path: 'addcerti',component:AddcertiComponent,outlet:'certi'},
+    {path:'delcerti',component:DelcertiComponent,outlet:'certi'},
     {path:'addproj',component:AddprojComponent},
     {path:'delproj',component:DelprojComponent},
     {path:'chgprofile',component:ChgprofileComponent}

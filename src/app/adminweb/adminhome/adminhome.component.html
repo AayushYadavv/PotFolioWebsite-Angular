@@ -3,25 +3,28 @@
     <app-accordian [heading]="'Update Profile'">
       <app-chgprofile></app-chgprofile>
     </app-accordian>
-    <app-accordian [heading]="'Add or Delete Blog'">
-      <app-tabchildnav>
-        <a routerLink="./addblog" routerLinkActive="active" class="item">
-          Add Blog
-        </a>
-        <a routerLink="./delblog" routerLinkActive="active" class="item">
-          Delete Blog
-        </a>
-      </app-tabchildnav>
+    <app-accordian [heading]="'Add Blog'">
+      <app-addblog></app-addblog>
     </app-accordian>
-    <app-accordian [heading]="'Add or Delete Certificate'">
-      <app-tabchildnav>
-        <a routerLink="./addcerti" routerLinkActive="active" class="item">
-          Add Certificate
-        </a>
-        <a routerLink="./delcerti" routerLinkActive="active" class="item">
-          Delete Certificate
-        </a>
-      </app-tabchildnav>
+    <app-accordian [heading]="'Delete Blog'">
+      <app-delblog></app-delblog>
     </app-accordian>
+    <app-accordian [heading]="'Add Certificate'">
+      <app-addcerti></app-addcerti>
+    </app-accordian>
+    <app-accordian [heading]="'Delete Certificate'">
+      <app-delcerti></app-delcerti>
+    </app-accordian>
+    <app-accordian [heading]="'Add Project'">
+      <app-addproj></app-addproj>
+    </app-accordian>
+    <app-accordian [heading]="'Delete Project'">
+      <app-delcerti></app-delcerti>
+    </app-accordian>
+    <app-accordian [heading]="'View feedbacks'">
+      <app-view-feedback></app-view-feedback>
+    </app-accordian>
+    
+
   </div>
 </div>

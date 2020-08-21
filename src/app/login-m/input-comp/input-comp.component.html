@@ -1,8 +1,14 @@
 <div class="field">
-    <label>{{label}}</label>
-    <input [type]="inputType" [formControl]="control">
-    <div *ngIf="control.touched && control.errors" class="ui pointing red basic label">
-        Please enter a value
-      </div>
+  <label>{{ label }}</label>
+  <input [type]="inputType" [formControl]="control" />
+  <div
+    *ngIf="control.touched && control.getError('required')"
+    class="ui pointing red basic label"
+  >
+    Please enter a value
+  </div>
+  <div *ngIf="control.touched && control.getError('minlength')" class="ui pointing red basic label">
+    Please type minimum length of {{control.errors.minlength.requiredLength}} characters
+  </div>
 </div>
-<br>
+<br />

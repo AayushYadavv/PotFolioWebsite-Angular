@@ -1,1 +1,27 @@
-<p>chgprofile works!</p>
+<div class="ui inverted segment">
+  <h3>Profile Pic Change</h3>
+  <div *ngIf="profileForm.getError('ErrUpload')" class="ui red basic label">
+    Unable to Upload,Try again !
+  </div>
+  <div *ngIf="profileForm.getError('anyError')" class="ui red basic label">
+    Network Error,unable to upload !
+  </div>
+<div *ngIf="profileForm.get('file').errors && profileForm.get('file').touched && profileForm.get('file').dirty" class="ui red basic label">
+No file selected !
+</div>
+  <form
+    (ngSubmit)="submit()"
+    [formGroup]="profileForm"
+    class="ui inverted form"
+  >
+    <div class="field">
+      <label class="inverted">Select a Image</label>
+      <input
+        (change)="onfilechange($event)"
+        formControlName="file"
+        type="file"
+      />
+    </div>
+    <button class="ui submit button">Upload</button>
+  </form>
+</div>

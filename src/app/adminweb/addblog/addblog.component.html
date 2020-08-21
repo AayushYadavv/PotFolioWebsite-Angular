@@ -1,1 +1,19 @@
-<p>addblog works!</p>
+<div class="ui inverted segment">
+    <h3>Add blog</h3>
+    <div *ngIf="blogForm.getError('ErrUpload')" class="ui red basic label">
+    Unable to Upload,Try again !
+  </div>
+  <div *ngIf="blogForm.getError('anyError')" class="ui red basic label">
+    Network Error,unable to upload !
+  </div>
+<form (ngSubmit)="submit()" class="ui inverted form" [formGroup]="blogForm" >
+    
+    <app-input-comp
+    label='Type Blog Content Below:'
+    [control]="blogForm.get('content')"
+    inputType="text">
+    </app-input-comp>
+    <button class="ui submit button">Add Blog</button>
+</form>
+
+</div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {ReactiveFormsModule} from '@angular/forms'
 import { AdminwebRoutingModule } from './adminweb-routing.module';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { ChgprofileComponent } from './chgprofile/chgprofile.component';
@@ -18,7 +18,8 @@ import { AddcertiComponent } from './addcerti/addcerti.component'
   imports: [
     CommonModule,
     AdminwebRoutingModule,
-    LoginMModule
+    LoginMModule,
+    ReactiveFormsModule
   ],
   
 })
