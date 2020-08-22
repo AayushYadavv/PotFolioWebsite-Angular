@@ -1,1 +1,4 @@
-<p>delblog works!</p>
+<div *ngFor="let blog of blogs">
+    <app-blog-comp (delEvent)="deleteBlog($event)" [blog]="blog" [adminFunc]="true"></app-blog-comp>
+    <br>
+</div>

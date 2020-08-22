@@ -8,13 +8,15 @@ import { CertificateComponent } from './certificate/certificate.component';
 import { TechnewsComponent } from './technews/technews.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { LoginMModule} from './../login-m/login-m.module'
 
 
 @NgModule({
   declarations: [HomeComponent, ProjectsComponent, CertificateComponent, TechnewsComponent, FeedbackComponent, BlogsComponent],
   imports: [
     CommonModule,
-    UserwebRoutingModule
+    UserwebRoutingModule,
+    LoginMModule
   ],
   exports:[
     BlogsComponent

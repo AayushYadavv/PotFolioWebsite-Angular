@@ -1,1 +1,31 @@
-<p>addcerti works!</p>
+<div class="ui inverted segment">
+  <h3>Add Certificate</h3>
+  <div *ngIf="certificateForm.getError('ErrUpload')" class="ui red basic label">
+    Unable to Upload,Try again !
+  </div>
+  <div *ngIf="certificateForm.getError('anyError')" class="ui red basic label">
+    Network Error,unable to upload !
+  </div>
+  <form (ngSubmit)="submit()" class="ui inverted form" [formGroup]="certificateForm">
+    <app-input-comp
+      label="Cerificate Name"
+      [control]="certificateForm.get('certiName')"
+      inputType="text"
+    ></app-input-comp>
+    <div class="field">
+      <label>Certificate Image</label>
+      <input type="file" (change)="filechange($event)" />
+    </div>
+    <app-input-comp
+      label="About certificate"
+      [control]="certificateForm.get('about')"
+      inputType="text"
+    ></app-input-comp>
+    <app-input-comp
+      label="Course Certificate URL"
+      [control]="certificateForm.get('url')"
+      inputType="text"
+    ></app-input-comp>
+    <button class="ui submit button">Submit</button>
+  </form>
+</div>

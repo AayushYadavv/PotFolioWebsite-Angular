@@ -38,10 +38,7 @@ export class AuthService {
         withCredentials: true,
       })
       .pipe(
-        tap((res) => {
-          
-          this.loggedIn.next(false);
-        })
+       
       );
   }
 

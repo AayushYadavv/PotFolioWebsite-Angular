@@ -1,1 +1,4 @@
-<p>blogs works!</p>
+<div *ngFor="let blog of blogs;let i = index">
+   <app-blog-comp  [blog]="blog" [adminFunc]="false"></app-blog-comp>
+   <br>
+</div>

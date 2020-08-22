@@ -1,1 +1,32 @@
-<p>blog-comp works!</p>
+<div class="ui segment">
+  <div class="ui items">
+    <div class="item">
+      <div  *ngIf="!mobileView" class="ui mini circular spaced image">
+        <img src="http://192.168.43.235:3000/profilePic/profile.png" />
+      </div>
+      <div class="content">
+        <img *ngIf="mobileView" class="ui mini circular spaced image" src="http://192.168.43.235:3000/profilePic/profile.png" />
+        <div class="header">{{blog.name}}</div>
+        <div class="meta">{{blog.date}}</div>
+
+        <div class="description">
+          <p>
+           {{blog.content}}
+          </p>
+        </div>
+        <div class="extra">
+          <div (click)="deleteBlog()" *ngIf="adminFunc" class="ui right floated primary button">
+            Delete Blog
+          </div>
+          <ng-container *ngIf="!adminFunc" >
+            <div class="ui label">
+                {{blog.likes}} Likes
+              </div>
+                <a (click)="toggleLike()"><i class="heart icon" [ngClass]="{'outline':!liked}" style="color: red;"></i></a>
+          </ng-container>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
