@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MobileViewService } from '../../shared/services/mobile-view.service'
-
+import { ServerCommService} from '../../shared/services/server-comm.service'
 @Component({
   selector: 'app-profile-card',
   templateUrl: './profile-card.component.html',
@@ -8,14 +8,21 @@ import { MobileViewService } from '../../shared/services/mobile-view.service'
 })
 export class ProfileCardComponent implements OnInit {
   mobileView :boolean= false
-
-  constructor(private mobileViewService:MobileViewService) { }
+  quote:String = "Tit for Tat"
+  author:String = ""
+  constructor(private serverComm:ServerCommService,private mobileViewService:MobileViewService) { }
 
   ngOnInit(): void {
     this.mobileViewService.mobileView.subscribe(res=>{
 
       this.mobileView = res
     })
+ 
+    this.serverComm.getQuote().subscribe({next:res=>{
+      this.quote = res.text
+      this.author = res.author
+    }})
+    
   }
 
 }

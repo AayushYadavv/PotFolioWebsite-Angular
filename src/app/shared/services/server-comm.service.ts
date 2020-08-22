@@ -50,4 +50,15 @@ export class ServerCommService {
   addCerti(formData:FormData){
     return this.http.post(`${this.apiRootLink}/addcerti`,formData,{withCredentials:true}).pipe(pluck('flag'),tap(res=>{console.log(res)}))
   }
+  getQuote(){
+    return this.http.get("https://type.fit/api/quotes",{headers:this.headerPost}).pipe(
+      map((res)=>{
+        const random = Math.floor(Math.random()*1000)
+        
+        return res[random]
+      })
+     
+      
+    )
+  }
 }
