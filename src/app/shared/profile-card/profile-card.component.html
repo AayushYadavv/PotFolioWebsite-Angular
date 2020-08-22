@@ -1,60 +1,83 @@
-<div class="ui two column centered grid" [ngClass]="{ stackable: mobileView }">
-  <div class="four column centered row">
-    <div class="column" [ngClass]="!mobileView?'right aligned':'aligned'">
-      <img
-        class="ui middle aligned left medium circular image"
-        src="http://192.168.43.235:3000/profilePic/profile.png"
-      />
-    </div>
-    <div class="left aligned column">
-      <div [ngClass]="{ topmargin: !mobileView }">
-        <div class="ui inverted segment">
-     
-          <div class="ui icon header">
-            <h1 class="inverted">Aayush Yadav</h1>
-            <p class="inverted">Software Engineer</p>
+<div
+  class="ui placeholder raised segment"
+  style="background-image: url('../../../assets/img.png')"
+>
+  <div *ngIf="!mobileView">
+    <br />
+    <br />
 
+  </div>
+
+  <div class="ui three column stackable center aligned grid">
+   
+    <div class="middle aligned row">
+      <div class="column"  *ngIf="!mobileView">
+        <div class="ui items">
+          <div class="item">
+            <div class="content">
+              <div class="description">
+                <p style="color: aliceblue; font-style: italic;font-size:small;">Thought for the day</p>
+                <p style="color: aliceblue; font-style: italic;font-size: large;">
+                  Passionate about almost Everthing. Interested in making things
+                  to work. Always curious for Efficiency
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      <div class="column" >
+        <div class="ui items">
+          <div class="item">
+            
+            <div class="content" style="color: beige;">
+              <a class="ui small circular  image">
+                <img src="../../../assets/123.jpeg" />
+              </a>
+              <h1>
+                <a class="ui inverted header">AAYUSH YADAV</a>
+              </h1>
+              <div class="meta" style="color: beige;">
+                <h2>Computer Engineer</h2>
+              </div>
+
+              <div class="description">
+                <p style="color: aliceblue; font-style: italic;font-size: medium;">
+                  Passionate about almost Everthing. Interested in making things
+                  to work. Always curious for Efficiency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column" *ngIf="!mobileView">
+        <div class="ui items">
+          <div class="item">
+            <div class="content">
+              <div class="description">
+                <p style="color: aliceblue; font-style: italic;font-size: large;">
+                  Get In Touch @
+                 </p>
+                <p style="color: aliceblue; font-style: italic;font-size: large;">
+                 aayushyadav8105@gmail.com
+                </p>
+                <p style="color: aliceblue; font-style: italic;font-size: large;">
+                 +91-7888215388
+                 </p>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- <div class="ui segment">
-  <div class="ui items">
-    <div class="item">
-      <div class="image">
-        <img src="http://192.168.43.235:3000/profilePic/profile.png">
-      </div>
-      <div class="content">
-        <a class="header">Header</a>
-        <div class="meta">
-          <span>Description</span>
-        </div>
-        <div class="description">
-          <p></p>
-        </div>
-        <div class="extra">
-          Additional Details
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="image">
-        <img src="http://192.168.43.235:3000/profilePic/profile.png">
-      </div>
-      <div class="content">
-        <a class="header">Header</a>
-        <div class="meta">
-          <span>Description</span>
-        </div>
-        <div class="description">
-          <p></p>
-        </div>
-        <div class="extra">
-          Additional Details
-        </div>
-      </div>
-    </div>
+  <div *ngIf="!mobileView">
+    <br />
+    <br />
+ 
   </div>
-</div> -->
+</div>
