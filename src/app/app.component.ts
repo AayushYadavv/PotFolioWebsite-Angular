@@ -6,6 +6,7 @@ import { Router} from '@angular/router'
 
 import { BehaviorSubject } from 'rxjs'
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,7 +19,8 @@ export class AppComponent implements AfterViewInit,OnInit,AfterContentInit{
       this.loggedin$ = this.authServ.loggedIn
     }
   title = 'myweb';
-  admin = `Aayush Yadav`;
+  selected = 'Menu';
+  sidebarOpen:boolean=false
   adminPanelActive = true;
   mobileView :boolean
 
@@ -75,7 +77,18 @@ export class AppComponent implements AfterViewInit,OnInit,AfterContentInit{
   async logout(){
     await this.authServ.logout().subscribe((res)=>{
      this.authServ.loggedIn.next(false)
+    this.sidebarOpen = false
+
     })
+  }
+
+  onselect(message:string){
+    this.selected = message
+    this.sidebarOpen = false
+
+  }
+  navbarOpen(){
+    this.sidebarOpen = !this.sidebarOpen
   }
 
 

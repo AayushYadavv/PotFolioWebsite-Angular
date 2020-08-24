@@ -1,35 +1,35 @@
 <ng-container>
   <div class="ui compact inverted fixed menu" *ngIf="mobileView">
-    <div class="ui simple inverted dropdown item">
-      <img class="circular image" src="http://192.168.43.235:3000/profilePic/profile.png" />
+    <!-- <div class="ui simple inverted dropdown item">
+      <i class="align justify icon"></i>
       <b style="padding-left: 7px;">{{ admin }}</b>
       <i class="dropdown icon"></i>
       <div class="menu">
         <a
           routerLink="./"
           [routerLinkActiveOptions]="{ exact: true }"
-          (click)="offAdmin()"
+          (click)="onselect()"
           class="item"
           routerLinkActive="active"
           >Home</a
         >
         <a
           routerLink="/projects"
-          (click)="offAdmin()"
+          (click)="onselect()"
           class="item"
           routerLinkActive="active"
           >Projects</a
         >
         <a
           routerLink="/certificate"
-          (click)="offAdmin()"
+          (click)="onselect()"
           class="item"
           routerLinkActive="active"
           >Certifications</a
         >
         <a
           routerLink="/technews"
-          (click)="offAdmin()"
+          (click)="onselect()"
           class="item"
           routerLinkActive="active"
           >TechNews</a
@@ -37,14 +37,14 @@
        
         <a
           routerLink="/blogs"
-          (click)="offAdmin()"
+          (click)="onselect()"
           class="item"
           routerLinkActive="active"
           >Blogs</a
         >
         <a
         routerLink="/feedback"
-        (click)="offAdmin()"
+        (click)="onselect()"
         class="item"
         routerLinkActive="active"
         >FeedBacks</a
@@ -79,9 +79,95 @@
           <div class="ui primary button">Admin Login</div></a
         >
       </div>
+    </div> -->
+    <div (click)="navbarOpen()"  class="ui simple inverted dropdown item">
+    <i class="align justify icon"></i>
+      <b style="padding-left: 7px;">{{ selected }}</b>
     </div>
+    <div class="ui simple sidebar inverted vertical menu left"
+    [ngClass]="{uncover:sidebarOpen,
+    visible:sidebarOpen}">
+     
+      <div class="item">
+        <i (click)="navbarOpen()" class="window close large outline icon"></i>
 
-    <div class="inverted item" style="margin-right: 0px; align-items: center;">
+        <h1 class="white">Welcome</h1>
+      </div>
+      <a
+          routerLink="./"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="onselect('Home')"
+          class="item"
+          routerLinkActive="active"
+          >Home</a
+        >
+        <a
+          routerLink="/projects"
+          (click)="onselect('Projects')"
+          class="item"
+          routerLinkActive="active"
+          >Projects</a
+        >
+        <a
+          routerLink="/certificate"
+          (click)="onselect('Certificates')"
+          class="item"
+          routerLinkActive="active"
+          >Certifications</a
+        >
+        <a
+          routerLink="/technews"
+          (click)="onselect('TechNews')"
+          class="item"
+          routerLinkActive="active"
+          >TechNews</a
+        >
+       
+        <a
+          routerLink="/blogs"
+          (click)="onselect('Blogs')"
+          class="item"
+          routerLinkActive="active"
+          >Blogs</a
+        >
+        <a
+        routerLink="/feedback"
+        (click)="onselect('Contact')"
+        class="item"
+        routerLinkActive="active"
+        >Contact</a
+      >
+        <a
+          *ngIf="loggedin$ | async"
+          class="item"
+          routerLink="/admin"
+          (click)="onselect('Admin')"
+          routerLinkActive="active"
+        >
+          <div class="ui primary button">Admin Panel</div></a
+        >
+        <a
+          *ngIf="loggedin$ |async"
+          class="item"
+          (click)="logout()"
+          routerLink="/logout"
+          routerLinkActive="active"
+        >
+          <div class="ui primary button">Log out</div></a
+        >
+        <a
+          *ngIf="!(loggedin$ |async)"
+          routerLink="/login"
+          class="item"
+          
+
+          (click)="onAdmin()"
+          routerLinkActive="active"
+        >
+          <div class="ui primary button">Admin Login</div></a
+        >
+    </div>
+    <div class="right aligned inverted item" style="right:0px; align-items: center;">
       <!-- <img class="circular image" src="../assets/123.jpeg" /> -->
       <a href="https://www.linkedin.com/in/aayush-yadav-854082124/" target="_blank"
         ><img class="ui mini spaced image" src="../assets/linkdin.png"
@@ -109,34 +195,34 @@
   <div class="ui stackable fixed huge inverted menu" *ngIf="!mobileView">
     <div class="item">
       <img class="circular image" src="http://192.168.43.235:3000/profilePic/profile.png" />
-      <b style="padding: 10px;">{{ admin }}</b>
+      <b style="padding: 10px;">Aayush Yadav</b>
     </div>
 
     <a
       routerLink="./"
       [routerLinkActiveOptions]="{ exact: true }"
-      (click)="onAdmin()"
+      (click)="onselect()"
       class="item"
       routerLinkActive="active"
       >Home</a
     >
     <a
       routerLink="/projects"
-      (click)="offAdmin()"
+      (click)="onselect()"
       class="item"
       routerLinkActive="active"
       >Projects</a
     >
     <a
       routerLink="/certificate"
-      (click)="offAdmin()"
+      (click)="onselect()"
       class="item"
       routerLinkActive="active"
       >Certifications</a
     >
     <a
       routerLink="/technews"
-      (click)="offAdmin()"
+      (click)="onselect()"
       class="item"
       routerLinkActive="active"
       >TechNews</a
@@ -144,14 +230,14 @@
    
     <a
       routerLink="/blogs"
-      (click)="offAdmin()"
+      (click)="onselect()"
       class="item"
       routerLinkActive="active"
       >Blogs</a
     >
     <a
     routerLink="/feedback"
-    (click)="offAdmin()"
+    (click)="onselect()"
     class="item"
     routerLinkActive="active"
     >Contact</a
@@ -198,12 +284,12 @@
     </div>
   </div>
 
-  <div class="ui stackable grid">
+  <div class="ui  stackable grid ">
     <div class="row">
       <div
         *ngIf="!adminPanelActive && !mobileView"
         [ngClass]="{
-          four: !adminPanelActive,
+          three : !adminPanelActive,
           wide: !adminPanelActive,
           column: !adminPanelActive,
           hidden: adminPanelActive
@@ -220,7 +306,7 @@
       </div>
       <div
         [ngClass]="{
-          eight: !adminPanelActive,
+          ten: !adminPanelActive,
           sixteen: adminPanelActive,
           wide: true,
           column: true
@@ -235,7 +321,7 @@
       <div
         *ngIf="!adminPanelActive"
         [ngClass]="{
-          four: !adminPanelActive,
+          three: !adminPanelActive,
           wide: !adminPanelActive,
           column: !adminPanelActive,
           hidden: adminPanelActive

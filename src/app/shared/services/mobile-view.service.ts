@@ -11,7 +11,7 @@ mobileView = new BehaviorSubject(false)
 
   constructor() { 
   window.addEventListener('resize',(event)=>{
-      if(window.innerWidth<900){
+      if(window.innerWidth<1100){
         this.mobileView.next(true)
       }else{
         this.mobileView.next(false)
