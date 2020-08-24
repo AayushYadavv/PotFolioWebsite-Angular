@@ -1,0 +1,40 @@
+<div
+  class="ui red raised center aligned segment"
+  
+>
+  <div class="ui stackable items">
+    <div class="item">
+      <img 
+        *ngIf="!adminFunc"
+        class="ui medium bordered image"
+        [src]="apiLink"
+      />
+      <div class="middle aligned content">
+        <span style="font-style: italic;">Course name : </span>
+        <p class="header" style="font-size: 25px;">{{certis.certiName}}</p>
+        <br />
+        <span style="font-style: italic;">Course offered by : </span>
+        <p class="header" style="font-size: 25px;">
+          {{certis.certiOffered}}
+        </p>
+
+        <div class="meta" *ngIf="!adminFunc">
+          <span
+            >{{certis.certiAbout}}</span
+          >
+        </div>
+
+        <div class="extra">
+          <div (click)="deleteCerti()" *ngIf="adminFunc" class="ui right floated primary button">
+            Delete Certificate
+          </div>
+          <span *ngIf="!adminFunc" style="font-style: italic;">Certificate Link</span>
+          <a *ngIf="!adminFunc" [href]="courselink" target="_blank">
+            {{courselink}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />

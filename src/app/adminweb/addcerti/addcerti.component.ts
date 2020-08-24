@@ -12,7 +12,9 @@ export class AddcertiComponent implements OnInit {
     certiName :new FormControl('',[Validators.required]),
     certificateImage: new FormControl('',[Validators.required]),
     about : new FormControl('',[Validators.required]),
-    url:new FormControl('',[Validators.required])
+    url:new FormControl('',[Validators.required]),
+    offered: new FormControl('',[Validators.required]),
+    fileOption:new FormControl('')
   })
     constructor(private serverComm:ServerCommService) { }
   
@@ -36,19 +38,23 @@ export class AddcertiComponent implements OnInit {
    
 
       if(!this.certificateForm.valid){
- 
+        this.certificateForm.setErrors({'FLP':true})
 
         return
       }
+
 
       const certiFormdata= new FormData()
       certiFormdata.append('certiName',this.certificateForm.get('certiName').value)
       certiFormdata.append('certificate',this.certificateForm.get('certificateImage').value)
       certiFormdata.append('about',this.certificateForm.get('about').value)
       certiFormdata.append('url',this.certificateForm.get('url').value)
+      certiFormdata.append('offered',this.certificateForm.get('offered').value)
+
 
       this.serverComm.addCerti(certiFormdata).subscribe({
         next:(res)=>{
+            this.certificateForm.patchValue({certificateImage:""})
           if(res){
             alert("Certificate Succesfully Uploaded")
             this.certificateForm.reset()
@@ -57,6 +63,7 @@ export class AddcertiComponent implements OnInit {
           }
         },
         error:(err)=>{
+          this.certificateForm.patchValue({certificateImage:""})
           this.certificateForm.reset()
           this.certificateForm.setErrors({'anyError':true})
           

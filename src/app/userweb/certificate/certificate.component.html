@@ -1,1 +1,13 @@
-<p>certificate works!</p>
+<div class="ui  dimmer" [ngClass]="{active:loading}">
+  <div class="ui massive text loader">Loading</div>
+  
+</div>
+<h1 class="white certer">My Certificates</h1>
+<div *ngIf="errorMessage">
+  Uh ho ! Unable to load Certificate ! :c
+</div>
+<ng-container *ngIf="!errorMessage">
+  <div *ngFor="let certi of certificates">
+    <app-certi-card  [certis]="certi" [adminFunc]="false"></app-certi-card>
+  </div>
+</ng-container>

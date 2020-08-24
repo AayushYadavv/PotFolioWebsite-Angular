@@ -9,10 +9,12 @@ import { InputCompComponent } from './input-comp/input-comp.component';
 import { BlogCompComponent } from './blog-comp/blog-comp.component';
 import { AccordianComponent } from './accordian/accordian.component';
 import { TabchildnavComponent } from './tabchildnav/tabchildnav.component';
+import { CertiCardComponent } from './certi-card/certi-card.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 
 @NgModule({
-  declarations: [LoginCompComponent, InputCompComponent, BlogCompComponent, AccordianComponent, TabchildnavComponent],
+  declarations: [LoginCompComponent ,InputCompComponent, BlogCompComponent, AccordianComponent, TabchildnavComponent, CertiCardComponent, ProjectCardComponent],
   imports: [
     CommonModule,
     LoginMRoutingModule,
@@ -20,7 +22,7 @@ import { TabchildnavComponent } from './tabchildnav/tabchildnav.component';
   
   ],
  
-  exports:[InputCompComponent,BlogCompComponent,AccordianComponent,TabchildnavComponent]
+  exports:[InputCompComponent,ProjectCardComponent,BlogCompComponent,AccordianComponent,TabchildnavComponent,CertiCardComponent]
   
 })
 export class LoginMModule { }

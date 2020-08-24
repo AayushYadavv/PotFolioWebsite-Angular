@@ -1,1 +1,8 @@
-<p>delcerti works!</p>
+<div *ngIf="errorMessage">
+    Uh ho ! Unable to load Certificate ! :c
+  </div>
+  <ng-container *ngIf="!errorMessage">
+    <div *ngFor="let certi of certificates">
+      <app-certi-card (deleteEven)="deleteCerti($event)" [certis]="certi" [adminFunc]="true"></app-certi-card>
+    </div>
+  </ng-container>

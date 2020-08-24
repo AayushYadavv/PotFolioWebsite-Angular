@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders} from '@angular/common/http'
 import { tap ,pluck,map} from 'rxjs/operators'
 import {Blog} from '../models/blog'
+import {Certificate} from "../../shared/models/certificate"
+import {Project} from "../../shared/models/projects"
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +62,28 @@ export class ServerCommService {
      
       
     )
+  }
+  getCerti(){
+    return this.http.get<Certificate[]>(`${this.apiRootLink}/getcerti`,{withCredentials:true}).pipe()
+
+  }
+  delCerti(id:number){
+    return this.http.post(`${this.apiRootLink}/deletecerti/${id}`,' ',{withCredentials:true,headers:this.headerPost}).pipe(pluck('flag'),tap(res=>{console.log(res);
+    }))
+  }
+
+  addProject(message:any){
+   
+    return this.http.post(`${this.apiRootLink}/addproject`,
+  `projName=${message.projectName}&projPicUrl=${message.projectPicUrl}&projSourceUrl=${message.projectSourceUrl}&projUrl=${message.projectUrl}&projAbout=${message.about}`
+  ,{headers:this.headerPost,withCredentials:true}).pipe(pluck('flag'),tap(res=>{
+      console.log(res);
+      
+    }))
+  }
+
+  getProjects(){
+    return this.http.get<Project[]>(`${this.apiRootLink}/getprojects`).pipe(tap(res=>{console.log(res);
+    }))
   }
 }

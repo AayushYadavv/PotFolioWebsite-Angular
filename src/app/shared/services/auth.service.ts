@@ -30,6 +30,7 @@ export class AuthService {
 
   apiRootLink = 'http://192.168.43.235:3000';
   loggedIn = new BehaviorSubject(null);
+  waiting =  new BehaviorSubject(false);
   constructor(private http: HttpClient) {}
 
   logout() {

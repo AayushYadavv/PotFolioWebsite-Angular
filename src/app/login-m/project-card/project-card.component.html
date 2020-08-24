@@ -1,0 +1,40 @@
+<div
+  class="ui red raised center aligned segment"
+  
+>
+  <div class="ui stackable items">
+    <div class="item">
+      <img 
+        *ngIf="!adminFunc"
+        class="ui medium bordered image"
+        [src]="ImgLink"
+      />
+      <div class="middle aligned content">
+        <span style="font-style: italic;">Project name : </span>
+        <p class="header" style="font-size: 25px;">{{project.projectName}}</p>
+        <br />
+        
+        
+
+        <div class="meta" *ngIf="!adminFunc">
+          <span
+            >{{project.about}}</span
+          >
+        </div>
+
+        <div class="extra">
+          <div (click)="deleteProj()" *ngIf="adminFunc" class="ui right floated primary button">
+            Delete Project
+          </div>
+          <span *ngIf="!adminFunc" style="font-style: italic;">Source Code</span>
+          <a *ngIf="!adminFunc" [href]="" target="_blank">
+            {{project.sourceCodeUrl}}
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+

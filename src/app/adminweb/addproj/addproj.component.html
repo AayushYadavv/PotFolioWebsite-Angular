@@ -1,1 +1,40 @@
+<div class="ui inverted segment">
+    <h3>Add Project</h3>
+    <div *ngIf="projectForm.getError('ErrUpload')" class="ui red basic label">
+    Unable to Upload,Try again !
+  </div>
+  <div *ngIf="projectForm.getError('anyError')" class="ui red basic label">
+    Network Error,unable to upload !
+  </div>
+<form (ngSubmit)="submit()" class="ui inverted form" [formGroup]="projectForm" >
+    
+    <app-input-comp
+    label='Project Name:'
+    [control]="projectForm.get('projectName')"
+    inputType="text">
+    </app-input-comp>
+    <app-input-comp
+    label='Project Pic URL:'
+    [control]="projectForm.get('projectPicUrl')"
+    inputType="text">
+    </app-input-comp>
+    <app-input-comp
+    label='Project Source URL:'
+    [control]="projectForm.get('projectSourceUrl')"
+    inputType="text">
+    </app-input-comp>
+    <app-input-comp
+    label='Project Url :'
+    [control]="projectForm.get('projectUrl')"
+    inputType="text">
+    </app-input-comp>
+    <app-input-comp
+    label='Project About :'
+    [control]="projectForm.get('about')"
+    inputType="text">
+    </app-input-comp>
+    <button class="ui submit button">Add Project</button>
+</form>
+
+</div>
 

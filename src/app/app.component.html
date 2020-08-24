@@ -34,13 +34,7 @@
           routerLinkActive="active"
           >TechNews</a
         >
-        <a
-          routerLink="/feedback"
-          (click)="offAdmin()"
-          class="item"
-          routerLinkActive="active"
-          >FeedBacks</a
-        >
+       
         <a
           routerLink="/blogs"
           (click)="offAdmin()"
@@ -48,6 +42,13 @@
           routerLinkActive="active"
           >Blogs</a
         >
+        <a
+        routerLink="/feedback"
+        (click)="offAdmin()"
+        class="item"
+        routerLinkActive="active"
+        >FeedBacks</a
+      >
         <a
           *ngIf="loggedin$ | async"
           class="item"
@@ -114,7 +115,7 @@
     <a
       routerLink="./"
       [routerLinkActiveOptions]="{ exact: true }"
-      (click)="offAdmin()"
+      (click)="onAdmin()"
       class="item"
       routerLinkActive="active"
       >Home</a
@@ -140,13 +141,7 @@
       routerLinkActive="active"
       >TechNews</a
     >
-    <a
-      routerLink="/feedback"
-      (click)="offAdmin()"
-      class="item"
-      routerLinkActive="active"
-      >FeedBacks</a
-    >
+   
     <a
       routerLink="/blogs"
       (click)="offAdmin()"
@@ -154,6 +149,13 @@
       routerLinkActive="active"
       >Blogs</a
     >
+    <a
+    routerLink="/feedback"
+    (click)="offAdmin()"
+    class="item"
+    routerLinkActive="active"
+    >Contact</a
+  >
     <div class="right menu">
       <a class="item" href="https://www.linkedin.com/in/aayush-yadav-854082124/" target="_blank"
         ><img class="ui mini spaced image" src="../assets/linkdin.png"
@@ -239,26 +241,19 @@
           hidden: adminPanelActive
         }"
       >
-        <div class="ui compact segment">
+        
+        <div [ngClass]="{ hidden: adminPanelActive, ss: !adminPanelActive }">
 
           <div class="box">
-            <div class="ui placeholder">
-              <div class="paragraph">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-              </div>
-              <div class="paragraph">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-              </div>
-            </div>
+            <img
+            class="ui medium circular image"
+            src="http://192.168.43.235:3000/profilePic/profile.png"
+          >
+            
           </div>
         </div>
+        </div>>
       </div>
     </div>
-  </div>
+ 
 </ng-container>

@@ -3,7 +3,7 @@ import { AutoAdminPageService } from './auto-admin-page.service';
 import { MobileViewService } from './shared/services/mobile-view.service'
 import { AuthService } from './shared/services/auth.service'
 import { Router} from '@angular/router'
-import { CommonModule } from '@angular/common';
+
 import { BehaviorSubject } from 'rxjs'
 
 @Component({
@@ -19,7 +19,7 @@ export class AppComponent implements AfterViewInit,OnInit,AfterContentInit{
     }
   title = 'myweb';
   admin = `Aayush Yadav`;
-  adminPanelActive = false;
+  adminPanelActive = true;
   mobileView :boolean
 
 
@@ -34,6 +34,7 @@ export class AppComponent implements AfterViewInit,OnInit,AfterContentInit{
       this.mobileView = res
   
     }) 
+    
    
       this.authServ.isLoggedIn().subscribe(()=>{})
   
