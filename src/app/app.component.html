@@ -330,11 +330,10 @@
         
         <div [ngClass]="{ hidden: adminPanelActive, ss: !adminPanelActive }">
 
-          <div class="box">
-            <img
-            class="ui medium circular image"
-            src="http://192.168.43.235:3000/profilePic/profile.png"
-          >
+          <div class="box" style="margin-left: 0;">
+            <div class="ui inverted segment">
+            <app-new-side-card></app-new-side-card>
+          </div>
             
           </div>
         </div>

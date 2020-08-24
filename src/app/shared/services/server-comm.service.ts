@@ -95,4 +95,14 @@ export class ServerCommService {
       })
     )
   }
+
+  getNews(){
+    return this.http.get(`${this.apiRootLink}/getnews`,{withCredentials:true}).pipe(
+      pluck('news'),
+      tap(res=>{
+        console.log(res);
+        
+      })
+    )
+  }
 }
