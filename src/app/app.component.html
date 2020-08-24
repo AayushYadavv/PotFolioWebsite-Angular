@@ -80,96 +80,99 @@
         >
       </div>
     </div> -->
-    <div (click)="navbarOpen()"  class="ui simple inverted dropdown item">
-    <i class="align justify icon"></i>
+    <div (click)="navbarOpen()" class="ui simple inverted dropdown item">
+      <i class="align justify icon"></i>
       <b style="padding-left: 7px;">{{ selected }}</b>
     </div>
-    <div class="ui simple sidebar inverted vertical menu left"
-    [ngClass]="{uncover:sidebarOpen,
-    visible:sidebarOpen}">
-     
+    <div
+      class="ui simple sidebar inverted vertical menu left"
+      [ngClass]="{ uncover: sidebarOpen, visible: sidebarOpen }"
+    >
       <div class="item">
-      <i (click)="navbarOpen()" class="window close large outline icon"></i>
+        <i (click)="navbarOpen()" class="window close large outline icon"></i>
 
         <h1 class="white">Welcome</h1>
       </div>
       <a
-          routerLink="./"
-          [routerLinkActiveOptions]="{ exact: true }"
-          (click)="onselect('Home')"
-          class="item"
-          routerLinkActive="active"
-          >Home</a
-        >
-        <a
-          routerLink="/projects"
-          (click)="onselect('Projects')"
-          class="item"
-          routerLinkActive="active"
-          >Projects</a
-        >
-        <a
-          routerLink="/certificate"
-          (click)="onselect('Certificates')"
-          class="item"
-          routerLinkActive="active"
-          >Certifications</a
-        >
-        <a
-          routerLink="/technews"
-          (click)="onselect('TechNews')"
-          class="item"
-          routerLinkActive="active"
-          >TechNews</a
-        >
-       
-        <a
-          routerLink="/blogs"
-          (click)="onselect('Blogs')"
-          class="item"
-          routerLinkActive="active"
-          >Blogs</a
-        >
-        <a
+        routerLink="./"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="onselect('Home')"
+        class="item"
+        routerLinkActive="active"
+        >Home</a
+      >
+      <a
+        routerLink="/projects"
+        (click)="onselect('Projects')"
+        class="item"
+        routerLinkActive="active"
+        >Projects</a
+      >
+      <a
+        routerLink="/certificate"
+        (click)="onselect('Certificates')"
+        class="item"
+        routerLinkActive="active"
+        >Certifications</a
+      >
+      <a
+        routerLink="/technews"
+        (click)="onselect('TechNews')"
+        class="item"
+        routerLinkActive="active"
+        >TechNews</a
+      >
+
+      <a
+        routerLink="/blogs"
+        (click)="onselect('Blogs')"
+        class="item"
+        routerLinkActive="active"
+        >Blogs</a
+      >
+      <a
         routerLink="/feedback"
         (click)="onselect('Contact')"
         class="item"
         routerLinkActive="active"
         >Feedback</a
       >
-        <a
-          *ngIf="loggedin$ | async"
-          class="item"
-          routerLink="/admin"
-          (click)="onselect('Admin')"
-          routerLinkActive="active"
-        >
-          <div class="ui primary button">Admin Panel</div></a
-        >
-        <a
-          *ngIf="loggedin$ |async"
-          class="item"
-          (click)="logout()"
-          routerLink="/logout"
-          routerLinkActive="active"
-        >
-          <div class="ui primary button">Log out</div></a
-        >
-        <a
-          *ngIf="!(loggedin$ |async)"
-          routerLink="/login"
-          class="item"
-          
-
-          (click)="onAdmin()"
-          routerLinkActive="active"
-        >
-          <div class="ui primary button">Admin Login</div></a
-        >
+      <a
+        *ngIf="loggedin$ | async"
+        class="item"
+        routerLink="/admin"
+        (click)="onselect('Admin')"
+        routerLinkActive="active"
+      >
+        <div class="ui primary button">Admin Panel</div></a
+      >
+      <a
+        *ngIf="loggedin$ | async"
+        class="item"
+        (click)="logout()"
+        routerLink="/logout"
+        routerLinkActive="active"
+      >
+        <div class="ui primary button">Log out</div></a
+      >
+      <a
+        *ngIf="!(loggedin$ | async)"
+        routerLink="/login"
+        class="item"
+        (click)="onAdmin()"
+        routerLinkActive="active"
+      >
+        <div class="ui primary button">Admin Login</div></a
+      >
     </div>
-    <div class="right aligned inverted item" style="right:0px; align-items: center;">
+    <div
+      class="right aligned inverted item"
+      style="right: 0px; align-items: center;"
+    >
       <!-- <img class="circular image" src="../assets/123.jpeg" /> -->
-      <a href="https://www.linkedin.com/in/aayush-yadav-854082124/" target="_blank"
+      <a
+        href="https://www.linkedin.com/in/aayush-yadav-854082124/"
+        target="_blank"
         ><img class="ui mini spaced image" src="../assets/linkdin.png"
       /></a>
       <a href="https://github.com/AayushYadavv" target="_blank">
@@ -181,9 +184,11 @@
     </div>
   </div>
 
- <div style="margin-top: 100px;">
-      <app-profile-card></app-profile-card>
-  </div>>    <!-- <div class="ui text container">
+  <div style="margin-top: 100px;">
+    <app-profile-card></app-profile-card>
+  </div>
+  >
+  <!-- <div class="ui text container">
         <h1 class="ui inverted header">
           Welcome !
         </h1>
@@ -191,10 +196,13 @@
         <h2>Quote Goes there</h2>
         
       </div> -->
-  
+
   <div class="ui stackable fixed huge inverted menu" *ngIf="!mobileView">
     <div class="item">
-      <img class="circular image" src="http://192.168.43.235:3000/profilePic/profile.png" />
+      <img
+        class="circular image"
+        src="http://192.168.43.235:3000/profilePic/profile.png"
+      />
       <b style="padding: 10px;">Aayush Yadav</b>
     </div>
 
@@ -227,7 +235,7 @@
       routerLinkActive="active"
       >TechNews</a
     >
-   
+
     <a
       routerLink="/blogs"
       (click)="onselect()"
@@ -236,28 +244,34 @@
       >Blogs</a
     >
     <a
-    routerLink="/feedback"
-    (click)="onselect()"
-    class="item"
-    routerLinkActive="active"
-    >Feedback</a
-  >
+      routerLink="/feedback"
+      (click)="onselect()"
+      class="item"
+      routerLinkActive="active"
+      >Feedback</a
+    >
     <div class="right menu">
-      <a class="item" href="https://www.linkedin.com/in/aayush-yadav-854082124/" target="_blank"
+      <a
+        class="item"
+        href="https://www.linkedin.com/in/aayush-yadav-854082124/"
+        target="_blank"
         ><img class="ui mini spaced image" src="../assets/linkdin.png"
       /></a>
       <a class="item" href="https://github.com/AayushYadavv" target="_blank">
         <img class="ui mini spaced image" src="../assets/git.png"
       /></a>
-      <a class="item" href="https://www.instagram.com/yadavji_aayush/" target="_blank">
+      <a
+        class="item"
+        href="https://www.instagram.com/yadavji_aayush/"
+        target="_blank"
+      >
         <img class="ui mini spaced image" src="../assets/insta.png"
       /></a>
       <a
-        *ngIf="!(loggedin$ |async)"
+        *ngIf="!(loggedin$ | async)"
         routerLink="/login"
         class="item"
         (click)="onAdmin()"
-
         routerLinkActive="active"
       >
         <div class="ui primary button">Admin Login</div></a
@@ -273,7 +287,7 @@
       >
 
       <a
-        *ngIf="loggedin$ |async"
+        *ngIf="loggedin$ | async"
         class="item"
         routerLink="/logout"
         (click)="logout()"
@@ -284,12 +298,12 @@
     </div>
   </div>
 
-  <div class="ui  stackable grid ">
+  <div class="ui stackable grid">
     <div class="row">
       <div
         *ngIf="!adminPanelActive && !mobileView"
         [ngClass]="{
-          three : !adminPanelActive,
+          three: !adminPanelActive,
           wide: !adminPanelActive,
           column: !adminPanelActive,
           hidden: adminPanelActive
@@ -297,11 +311,37 @@
       >
         <div [ngClass]="{ hidden: adminPanelActive, ss: !adminPanelActive }">
           <div class="box">
-            <img
-              class="ui medium circular image"
-              src="http://192.168.43.235:3000/profilePic/profile.png"
-            />
+            <div class="ui inverted segment">
+            <div class="ui inverted items">
+              <div class="item">
+                
+                <div class="middle aligned content">
+                    <img class="ui medium rounded image" src="../assets/123.jpeg">
+                  
+                  <h1 style="color: red;">Aayush Yadav</h1>
+                  <hr>
+                  <div class="meta">
+                    
+                    <span style="color: orange;">Computer Engineer</span>
+                    <hr>
+                    <p style="color: aliceblue;">Interned at ISRO-RRSC,Nagpur</p>
+                    <p style="color: aliceblue;">Web Developer</p>
+                    <p style="color: aliceblue;">Android Developer</p>
+                    <p style="color: aliceblue;">Upgrading Skills  to be a Full-Stack Developer</p>
+                    
+                  </div>
+                  <div class="description">
+                    <p></p>
+                  </div>
+                  <div class="extra">
+                    Additional Details
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          </div>
+
         </div>
       </div>
       <div
@@ -327,18 +367,15 @@
           hidden: adminPanelActive
         }"
       >
-        
         <div [ngClass]="{ hidden: adminPanelActive, ss: !adminPanelActive }">
-
           <div class="box" style="margin-left: 0;">
             <div class="ui inverted segment">
-            <app-new-side-card></app-new-side-card>
-          </div>
-            
+              <app-new-side-card></app-new-side-card>
+            </div>
           </div>
         </div>
-        </div>>
       </div>
+      >
     </div>
- 
+  </div>
 </ng-container>
