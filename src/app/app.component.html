@@ -89,7 +89,7 @@
     visible:sidebarOpen}">
      
       <div class="item">
-        <i (click)="navbarOpen()" class="window close large outline icon"></i>
+      <i (click)="navbarOpen()" class="window close large outline icon"></i>
 
         <h1 class="white">Welcome</h1>
       </div>
@@ -135,7 +135,7 @@
         (click)="onselect('Contact')"
         class="item"
         routerLinkActive="active"
-        >Contact</a
+        >Feedback</a
       >
         <a
           *ngIf="loggedin$ | async"
@@ -240,7 +240,7 @@
     (click)="onselect()"
     class="item"
     routerLinkActive="active"
-    >Contact</a
+    >Feedback</a
   >
     <div class="right menu">
       <a class="item" href="https://www.linkedin.com/in/aayush-yadav-854082124/" target="_blank"

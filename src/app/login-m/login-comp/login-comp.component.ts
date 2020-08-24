@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-comp.component.css']
 })
 export class LoginCompComponent implements OnInit {
+  loading:boolean=false
   loggedInVal: boolean;
   loginForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -23,6 +24,9 @@ export class LoginCompComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.authServ.waiting.subscribe(res=>{
+      this.loading = res
+    })
     this.adminServ.changeMessage(true);
     this.authServ.loggedIn.subscribe((res) => {
       // console.log('service', res);

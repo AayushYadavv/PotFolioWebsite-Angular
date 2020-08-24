@@ -86,4 +86,13 @@ export class ServerCommService {
     return this.http.get<Project[]>(`${this.apiRootLink}/getprojects`).pipe(tap(res=>{console.log(res);
     }))
   }
+
+  sendFeedback(feedback:any){
+    return this.http.post(`${this.apiRootLink}/feedback`,`name=${feedback.name}&email=${feedback.email}&content=${feedback.feedback}`,{headers:this.headerPost,withCredentials:true}).pipe(
+      pluck('flag'),
+      tap(res=>{
+        console.log(res)
+      })
+    )
+  }
 }

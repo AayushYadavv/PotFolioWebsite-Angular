@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms'
 import { UserwebRoutingModule } from './userweb-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -16,7 +16,8 @@ import { LoginMModule} from './../login-m/login-m.module'
   imports: [
     CommonModule,
     UserwebRoutingModule,
-    LoginMModule
+    LoginMModule,
+    ReactiveFormsModule
   ],
   exports:[
     BlogsComponent

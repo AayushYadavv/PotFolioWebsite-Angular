@@ -1,3 +1,6 @@
+<div class="ui  dimmer" [ngClass]="{active:loading}">
+  <div class="ui massive text loader">Loading</div>
+  </div>
 <h3>Admin Login</h3>
 <div *ngIf="loginForm.getError('Wrong Credentials')" class="ui  red basic label">
   Wrong Username or Password provided

@@ -1,1 +1,34 @@
-<p>feedback works!</p>
+<div class="ui  dimmer" [ngClass]="{active:loading}">
+    <div class="ui massive text loader">Loading</div>
+    </div>
+<div class="ui inverted segment">
+    
+    <h3>Give Feedback!</h3>
+    <br>
+    <div *ngIf="feedbackForm.getError('ErrUpload')" class="ui red basic label">
+    Unable to Upload,Try again !
+  </div>
+  <div *ngIf="feedbackForm.getError('anyError')" class="ui red basic label">
+    Network Error,unable to upload !
+  </div>
+<form (ngSubmit)="submit()" class="ui inverted form" [formGroup]="feedbackForm" >
+    
+    <app-input-comp
+    label='Name:'
+    [control]="feedbackForm.get('name')"
+    inputType="text">
+    </app-input-comp>
+    <app-input-comp
+    label='Email:'
+    [control]="feedbackForm.get('email')"
+    inputType="text">
+    </app-input-comp>  <app-input-comp
+    label='Feedback:'
+    [control]="feedbackForm.get('feedback')"
+    inputType="text">
+    </app-input-comp>
+    <button class="ui submit button">Add Blog</button>
+</form>
+
+</div>
+
