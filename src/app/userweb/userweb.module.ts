@@ -9,6 +9,7 @@ import { TechnewsComponent } from './technews/technews.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { LoginMModule} from './../login-m/login-m.module'
+import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { LoginMModule} from './../login-m/login-m.module'
     UserwebRoutingModule,
     LoginMModule,
     ReactiveFormsModule
+    // BrowserAnimationsModule
   ],
   exports:[
     BlogsComponent

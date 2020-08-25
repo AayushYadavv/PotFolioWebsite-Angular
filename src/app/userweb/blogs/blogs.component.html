@@ -1,16 +1,20 @@
 
-
   <div class="ui  dimmer" [ngClass]="{active:loading}">
     <div class="ui massive text loader">Loading</div>
     
   </div>
+
   <h1 class="white">My Blogs</h1>
+  <hr>
   <div *ngIf="errorMessage">
      Uh ho ! Unable to load Blogs ! :c
   </div>
   <div *ngIf="!errorMessage">
+<div [@listAnimation]="blogs.length">
+
     <div *ngFor="let blog of blogs; let i = index">
       <app-blog-comp [blog]="blog" [adminFunc]="false"></app-blog-comp>
       <br />
     </div>
   </div>
+</div>

@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MobileViewService } from '../../shared/services/mobile-view.service'
 import { ServerCommService} from '../../shared/services/server-comm.service'
+import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+
 @Component({
   selector: 'app-profile-card',
   templateUrl: './profile-card.component.html',
-  styleUrls: ['./profile-card.component.css']
+  styleUrls: ['./profile-card.component.css'],
+
 })
 export class ProfileCardComponent implements OnInit {
   mobileView :boolean= false

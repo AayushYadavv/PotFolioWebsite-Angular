@@ -1,5 +1,5 @@
 <ng-container>
-  <div class="ui compact inverted fixed menu" *ngIf="mobileView">
+  <div @mobmenu  class="ui compact inverted fixed menu" *ngIf="mobileView">
     <!-- <div class="ui simple inverted dropdown item">
       <i class="align justify icon"></i>
       <b style="padding-left: 7px;">{{ admin }}</b>
@@ -80,7 +80,7 @@
         >
       </div>
     </div> -->
-    <div (click)="navbarOpen()" class="ui simple inverted dropdown item">
+    <div (click)="navbarOpen()" class="ui simple inverted dropdown item xx">
       <i class="align justify icon"></i>
       <b style="padding-left: 7px;">{{ selected }}</b>
     </div>
@@ -166,26 +166,28 @@
       >
     </div>
     <div
-      class="right aligned inverted item"
-      style="right: 0px; align-items: center;"
+      class=" inverted item"
+  
     >
       <!-- <img class="circular image" src="../assets/123.jpeg" /> -->
       <a
         href="https://www.linkedin.com/in/aayush-yadav-854082124/"
         target="_blank"
-        ><img class="ui mini spaced image" src="../assets/linkdin.png"
+        ><img class="ui mini spaced image xx" src="../assets/linkdin.png"
       /></a>
       <a href="https://github.com/AayushYadavv" target="_blank">
-        <img class="ui mini spaced image" src="../assets/git.png"
+        <img class="ui mini spaced image xx" src="../assets/git.png"
       /></a>
       <a href="https://www.instagram.com/yadavji_aayush/" target="_blank">
-        <img class="ui mini spaced image" src="../assets/insta.png"
+        <img class="ui mini spaced image xx " src="../assets/insta.png"
       /></a>
     </div>
   </div>
 
-  <div style="margin-top: 100px;">
-    <app-profile-card></app-profile-card>
+  <div @upexplainerAnim style="margin-top: 100px;">
+    <div class="profile">
+      <app-profile-card></app-profile-card>
+    </div>
   </div>
   >
   <!-- <div class="ui text container">
@@ -197,7 +199,7 @@
         
       </div> -->
 
-  <div class="ui stackable fixed huge inverted menu" *ngIf="!mobileView">
+  <div @menu class="ui stackable fixed huge inverted menu" *ngIf="!mobileView">
     <div class="item">
       <img
         class="circular image"
@@ -209,28 +211,28 @@
     <a
       routerLink="./"
       [routerLinkActiveOptions]="{ exact: true }"
-      (click)="onselect()"
+      (click)="offAdmin()"
       class="item"
       routerLinkActive="active"
       >Home</a
     >
     <a
       routerLink="/projects"
-      (click)="onselect()"
+      (click)="offAdmin()"
       class="item"
       routerLinkActive="active"
       >Projects</a
     >
     <a
       routerLink="/certificate"
-      (click)="onselect()"
+      (click)="offAdmin()"
       class="item"
       routerLinkActive="active"
       >Certifications</a
     >
     <a
       routerLink="/technews"
-      (click)="onselect()"
+      (click)="offAdmin()"
       class="item"
       routerLinkActive="active"
       >TechNews</a
@@ -238,14 +240,14 @@
 
     <a
       routerLink="/blogs"
-      (click)="onselect()"
+      (click)="offAdmin()"
       class="item"
       routerLinkActive="active"
       >Blogs</a
     >
     <a
       routerLink="/feedback"
-      (click)="onselect()"
+      (click)="offAdmin()"
       class="item"
       routerLinkActive="active"
       >Feedback</a
@@ -309,42 +311,48 @@
           hidden: adminPanelActive
         }"
       >
-        <div [ngClass]="{ hidden: adminPanelActive, ss: !adminPanelActive }">
+        <div
+          @explainerAnim
+          [ngClass]="{ hidden: adminPanelActive, ss: !adminPanelActive }"
+        >
           <div class="box">
             <div class="ui inverted segment">
-            <div class="ui inverted items">
-              <div class="item">
-                
-                <div class="middle aligned content">
-                    <img class="ui medium rounded image" src="../assets/123.jpeg">
-                  
-                  <h1 style="color: red;">Aayush Yadav</h1>
-                  <hr>
-                  <div class="meta">
-                    
-                    <span style="color: orange;">Computer Engineer</span>
-                    <hr>
-                    <p style="color: aliceblue;">Interned at ISRO-RRSC,Nagpur</p>
-                    <p style="color: aliceblue;">Web Developer</p>
-                    <p style="color: aliceblue;">Android Developer</p>
-                    <p style="color: aliceblue;">Upgrading Skills  to be a Full-Stack Developer</p>
-                    
-                  </div>
-                  <div class="description">
-                    <p></p>
-                  </div>
-                  <div class="extra">
-                    Additional Details
+              <div class="ui inverted items">
+                <div class="item">
+                  <div class="middle aligned content">
+                    <img
+                      class="ui medium rounded image"
+                      src="../assets/123.jpeg"
+                    />
+
+                    <h1 style="color: red;">Aayush Yadav</h1>
+                    <hr />
+                    <div class="meta">
+                      <span style="color: orange;">Computer Engineer</span>
+                      <hr />
+                      <p style="color: aliceblue;">
+                        Interned at ISRO-RRSC,Nagpur
+                      </p>
+                      <p style="color: aliceblue;">Web Developer</p>
+                      <p style="color: aliceblue;">Android Developer</p>
+                      <p style="color: aliceblue;">
+                        Upgrading Skills to be a Full-Stack Developer
+                      </p>
+                    </div>
+                    <div class="description">
+                      <p></p>
+                    </div>
+                    <div class="extra">
+                      Additional Details
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
-
         </div>
       </div>
-      <div
+      <div @downexplainerAnim
         [ngClass]="{
           ten: !adminPanelActive,
           sixteen: adminPanelActive,
@@ -352,9 +360,12 @@
           column: true
         }"
       >
-        <div class="ui container">
-          <div class="ui inverted segment">
-            <router-outlet></router-outlet>
+      <div class="main">
+
+        <div  class="ui container">
+            <div class="ui inverted segment">
+              <router-outlet></router-outlet>
+            </div>
           </div>
         </div>
       </div>
@@ -366,11 +377,15 @@
           column: !adminPanelActive,
           hidden: adminPanelActive
         }"
+
       >
-        <div [ngClass]="{ hidden: adminPanelActive, ss: !adminPanelActive }">
-          <div class="box" style="margin-left: 0;">
-            <div class="ui inverted segment">
-              <app-new-side-card></app-new-side-card>
+       
+        <div   @revexplainerAnim [ngClass]="{ hidden: adminPanelActive, ss: !adminPanelActive }">
+          
+            <div class="box" style="margin-left: 0;">
+              <div class="ui inverted segment">
+                <app-new-side-card></app-new-side-card>
+              
             </div>
           </div>
         </div>

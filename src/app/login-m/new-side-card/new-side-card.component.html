@@ -11,11 +11,13 @@
         <div *ngIf="news"  class="meta">
           <span  style="color: white;">Latest Headlines</span>
           <hr>
-          <div *ngFor="let num of [1, 2, 3, 4, 5,6,7,8]" style="color: white;">
-            <span>{{ num }}.</span><span>{{news[num].headline}}</span>
+          <div  *ngFor="let num of [1, 2, 3, 4, 5,6,7,8,9,10]" style="color: white;">
+            <a  style="color: aliceblue; " [href]="news[num].link"><span>{{ num }}.</span><span style="font-style: italic;text-decoration: underline;">{{news[num].headline}}</span>
             <span style="color: orange;">{{news[num].date}}</span>
+            </a>
             <br>
             <br>
+
           </div>
         </div>
         <div class="ui dimmer active" *ngIf="!news">

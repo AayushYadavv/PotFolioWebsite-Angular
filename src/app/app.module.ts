@@ -10,11 +10,13 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInceptor}  from "./shared/http-inceptor"
 import { AccessDComponent } from './access-d/access-d.component';
 import { LoggedoutComponent } from './loggedout/loggedout.component';
+import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [AppComponent, ProfileCardComponent, AccessDComponent, LoggedoutComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     LoginMModule,
     InViewportModule,

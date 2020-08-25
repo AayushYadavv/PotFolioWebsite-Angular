@@ -2,21 +2,22 @@
   class="ui red raised center aligned segment"
   
 >
-  <div class="ui stackable items">
-    <div class="item">
+  <div 
+  class="ui stackable items">
+    <div class="item"  >
       <img 
         *ngIf="!adminFunc"
         class="ui medium bordered image"
         [src]="ImgLink"
       />
-      <div class="middle aligned content">
+      <div class="middle aligned content xx">
         <span style="font-style: italic;">Project name : </span>
         <p class="header" style="font-size: 25px;">{{project.projectName}}</p>
         <br />
         
         
 
-        <div class="meta" *ngIf="!adminFunc">
+        <div class="meta xx" *ngIf="!adminFunc">
           <span
             >{{project.about}}</span
           >
@@ -36,5 +37,5 @@
     </div>
   </div>
 </div>
-<br />
+<br>
 

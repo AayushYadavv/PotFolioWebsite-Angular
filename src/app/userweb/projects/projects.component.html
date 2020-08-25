@@ -4,8 +4,9 @@
     
   </div>
 <h1 class=white>My Projects<h1>
-    <br>
+  <hr>
+  <div [@listAnimation]="projects.length">
 <div *ngFor="let project of projects">
 <app-project-card [project]="project" [adminFunc]="false"></app-project-card>
-
+</div>
 </div>    
