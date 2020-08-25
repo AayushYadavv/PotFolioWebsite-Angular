@@ -1,1 +1,44 @@
-<p>technews works!</p>
+<div class="ui dimmer" [ngClass]="{ active: loading }">
+  <div class="ui massive text loader">Scraping news from sites...</div>
+</div>
+
+<div class="ui items">
+  <div class="item">
+    <div class="content">
+      <div class="header">
+        <h1 class="white" style="color: aliceblue;">Technews</h1>
+      </div>
+      <div *ngIf="news" class="meta">
+        <span style="color: white; font-size: larger;">Latest Headlines</span>
+        <span style="color: orange; font-style: italic;"
+          >(you can click the headline to read further)</span
+        >
+        <hr />
+        <div *ngFor="let newH of news; let num = index" style="color: white;">
+          <a style="color: aliceblue;" [href]="news[num].link" target="_blank"
+            ><span>{{ num + 1 }}.</span
+            ><span
+              style="
+                font-style: italic;
+                text-decoration: underline;
+                font-size: larger;
+              "
+              >{{ news[num].headline }}</span
+            >
+            <span style="color: red;">by {{ news[num].user }}</span>
+
+            <span style="color: orange;">{{ news[num].date }}</span>
+          </a>
+          <br />
+          <br />
+        </div>
+      </div>
+      <div class="ui dimmer active" *ngIf="!news">
+        <div class="ui massive text loader">Scraping news from sites...</div>
+      </div>
+      <div class="description">
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>

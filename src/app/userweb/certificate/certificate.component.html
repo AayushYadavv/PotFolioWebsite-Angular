@@ -8,7 +8,9 @@
   Uh ho ! Unable to load Certificate ! :c
 </div>
 <ng-container *ngIf="!errorMessage">
+  <div [@listAnimation]="certificates.length">
   <div *ngFor="let certi of certificates">
     <app-certi-card  [certis]="certi" [adminFunc]="false"></app-certi-card>
   </div>
+</div>
 </ng-container>

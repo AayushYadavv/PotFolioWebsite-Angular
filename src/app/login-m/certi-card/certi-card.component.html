@@ -28,7 +28,7 @@
           <div (click)="deleteCerti()" *ngIf="adminFunc" class="ui right floated primary button">
             Delete Certificate
           </div>
-          <span *ngIf="!adminFunc" style="font-style: italic;">Certificate Link</span>
+          <span *ngIf="!adminFunc" style="font-style: italic;">Certificate Link :</span>
           <a *ngIf="!adminFunc" [href]="courselink" target="_blank">
             {{courselink}}
           </a>
