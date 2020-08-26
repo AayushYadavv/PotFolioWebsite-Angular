@@ -27,11 +27,15 @@
           <div (click)="deleteProj()" *ngIf="adminFunc" class="ui right floated primary button">
             Delete Project
           </div>
-          <span *ngIf="!adminFunc" style="font-style: italic;">Source Code</span>
-          <a *ngIf="!adminFunc" [href]="" target="_blank">
+          <span *ngIf="!adminFunc" style="font-style: italic;">Source Code :</span>
+          <a *ngIf="!adminFunc" [href]="project.sourceCodeUrl" target="_blank">
             {{project.sourceCodeUrl}}
           </a>
-          
+          <p><span *ngIf="!adminFunc" style="font-style: italic;">Project Hosted at:</span>
+          <a *ngIf="!adminFunc" [href]="project.projectUrl" target="_blank">
+            {{project.projectUrl}}
+          </a>
+          </p>>
         </div>
       </div>
     </div>
