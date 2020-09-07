@@ -13,10 +13,23 @@ export class ProjectCardComponent implements OnInit {
 @Input() adminFunc :boolean=false
 @Output() delEven = new EventEmitter<number>()
 ImgLink 
+sourceCode:boolean=false
+hostedurl:boolean=false
   constructor() { }
 
   ngOnInit(): void {
   this.ImgLink = this.project.projectPicUrl
+  if(this.project.projectUrl==='---'){
+    this.hostedurl=false;
+  }else{
+    this.hostedurl=true
+  }
+
+  if(this.project.sourceCodeUrl==="Private Project"){
+    this.sourceCode=false
+  }else{
+    this.sourceCode=true
+  }
   }
 
   deleteProj(){{
