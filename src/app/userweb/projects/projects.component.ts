@@ -28,6 +28,7 @@ export class ProjectsComponent implements OnInit {
   getProjects(){
     this.servComm.getProjects().subscribe({
       next:res=>{
+        
         this.projects = res
       }
     })

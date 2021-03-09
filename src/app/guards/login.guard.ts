@@ -14,7 +14,7 @@ export class LoginGuard implements CanLoad {
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
     return this.authServ.loggedIn.pipe(
       skipWhile((res)=>{
-        console.log('indddd',res)
+      
         return res===null
       }),take(1),
       map(res=>{

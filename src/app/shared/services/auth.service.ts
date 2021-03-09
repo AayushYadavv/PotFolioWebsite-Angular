@@ -28,7 +28,7 @@ export class AuthService {
     'application/x-www-form-urlencoded'
   );
 
-  apiRootLink = 'http://192.168.43.235:3000';
+  apiRootLink = 'https://21sa.online';
   loggedIn = new BehaviorSubject(null);
   waiting =  new BehaviorSubject(false);
   constructor(private http: HttpClient) {}
@@ -39,7 +39,7 @@ export class AuthService {
         withCredentials: true,
       })
       .pipe(
-       
+       tap(res=>{})
       );
   }
 
@@ -56,7 +56,7 @@ export class AuthService {
       )
       .pipe(
         tap(() => {
-          console.log('tappped inside')
+          
           
         })
       );

@@ -1,52 +1,62 @@
-<div 
+<div
   class="ui placeholder raised segment"
   style="background-image: url('../../../assets/img.png')"
 >
   <div *ngIf="!mobileView">
     <br />
     <br />
-
   </div>
 
-  <div  class="ui three column stackable center aligned grid">
-   
+  <div class="ui three column stackable center aligned grid">
     <div class="middle aligned row">
-      <div class="column"  *ngIf="!mobileView">
+      <div class="column" *ngIf="!mobileView">
         <div class="ui items">
-          <div   class="item">
+          <div class="item">
             <div class="content">
-              <div class="description ">
-                <p style="color: aliceblue; font-style: italic;font-size:small;">Thought for the day</p>
-                <p style="color: aliceblue; font-style: italic;font-size: large;">
-                  {{quote}}
+              <div class="description">
+                <p
+                  style="color: aliceblue; font-style: italic; font-size: small"
+                >
+                  Thought for the day
                 </p>
-                <p style="color: aliceblue; font-style: italic;font-size: large;">
-                  -{{author}}
+                <p
+                  style="color: aliceblue; font-style: italic; font-size: large"
+                >
+                  {{ quote }}
+                </p>
+                <p
+                  style="color: aliceblue; font-style: italic; font-size: large"
+                >
+                  -{{ author }}
                 </p>
               </div>
-
             </div>
           </div>
         </div>
       </div>
-   
-      <div class="column" >
+
+      <div class="column">
         <div class="ui items">
           <div class="item">
-            
-            <div class="content" style="color: beige;">
-              <a class="ui small circular  image">
-                <img src="http://13.127.252.167/profilePic/profile.png" />
+            <div class="content" style="color: beige">
+              <a class="ui small circular image">
+                <img src="https://21sa.online/profilePic/profile.png" />
               </a>
               <h1>
                 <a class="ui inverted header">AAYUSH YADAV</a>
               </h1>
-              <div class="meta" style="color: beige;">
+              <div class="meta" style="color: beige">
                 <h2>Computer Engineer</h2>
               </div>
 
               <div class="description">
-                <p style="color: aliceblue; font-style: italic;font-size: medium;">
+                <p
+                  style="
+                    color: aliceblue;
+                    font-style: italic;
+                    font-size: medium;
+                  "
+                >
                   Passionate about almost Everthing. Interested in making things
                   to work. Always curious for Efficiency.
                 </p>
@@ -60,17 +70,22 @@
           <div class="item">
             <div class="content">
               <div class="description">
-                <p style="color: aliceblue; font-style: italic;font-size: large;">
+                <p
+                  style="color: aliceblue; font-style: italic; font-size: large"
+                >
                   Get In Touch @
-                 </p>
-                <p style="color: aliceblue; font-style: italic;font-size: large;">
-                 aayushyadav8105@gmail.com
                 </p>
-                <p style="color: aliceblue; font-style: italic;font-size: large;">
-                 +91-7888215388
-                 </p>
+                <p
+                  style="color: aliceblue; font-style: italic; font-size: large"
+                >
+                  aayushyadav8105@gmail.com
+                </p>
+                <p
+                  style="color: aliceblue; font-style: italic; font-size: large"
+                >
+                  +91-7888215388
+                </p>
               </div>
-
             </div>
           </div>
         </div>
@@ -80,6 +95,5 @@
   <div *ngIf="!mobileView">
     <br />
     <br />
- 
   </div>
 </div>

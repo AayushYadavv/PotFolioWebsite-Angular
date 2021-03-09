@@ -15,8 +15,8 @@ courselink
   constructor() { }
 
   ngOnInit(): void {
- this.apiLink=`http://13.127.252.167${this.certis.certiUrl}`
-this.courselink = this.certis.certiCourseUrl
+ this.apiLink=`https://21sa.online${this.certis.certiUrl}`
+ this.courselink = this.certis.certiCourseUrl
 
   }
 deleteCerti(){

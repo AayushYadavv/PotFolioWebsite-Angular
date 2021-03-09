@@ -9,7 +9,7 @@
   <div *ngIf="errorMessage">
      Uh ho ! Unable to load Blogs ! :c
   </div>
-  <div *ngIf="!errorMessage">
+  <div *ngIf="!errorMessage && blogs">
 <div [@listAnimation]="blogs.length">
 
     <div *ngFor="let blog of blogs; let i = index">

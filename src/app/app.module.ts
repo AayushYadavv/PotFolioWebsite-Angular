@@ -11,6 +11,8 @@ import { HttpInceptor}  from "./shared/http-inceptor"
 import { AccessDComponent } from './access-d/access-d.component';
 import { LoggedoutComponent } from './loggedout/loggedout.component';
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, ProfileCardComponent, AccessDComponent, LoggedoutComponent],
@@ -22,6 +24,7 @@ import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
     InViewportModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
 
   providers: [{

@@ -50,10 +50,10 @@ export class LoginCompComponent implements OnInit {
 
   submit() {
     if (!this.loginForm.valid) {
-      console.log('invalid');
+
       return;
     }
-    console.log(this.loginForm.value);
+    
     this.authServ.login(this.loginForm.value).subscribe({
       next: (res) => {
         // console.log('444', res);
@@ -80,7 +80,7 @@ export class LoginCompComponent implements OnInit {
       error: (err) => {
       
         if (!err.status) {
-          console.log('error ocurred')
+          
           this.loginForm.reset();
           this.loginForm.setErrors({ 'Unable to login': true });
         }
