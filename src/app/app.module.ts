@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {NgParticlesModule} from "ng-particles";
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    NgParticlesModule,
     LoginMModule,
     InViewportModule,
     ReactiveFormsModule,

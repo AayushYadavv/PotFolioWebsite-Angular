@@ -28,7 +28,7 @@ export class AuthService {
     'application/x-www-form-urlencoded'
   );
 
-  apiRootLink = 'https://21sa.online';
+  apiRootLink = 'https://api.aayushyadav.in';
   loggedIn = new BehaviorSubject(null);
   waiting =  new BehaviorSubject(false);
   constructor(private http: HttpClient) {}

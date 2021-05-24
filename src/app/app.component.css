@@ -1,3 +1,23 @@
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  
+
+}
+.particle{
+  height: 100%;
+  width: 100%;
+ 
+  top:-5px;
+  position:fixed;
+
+  opacity: 1;
+}
+
+
+
+
 
 @media (min-device-width: 1100px) {
   .pusher {
@@ -39,3 +59,4 @@
 .pusher{
   margin-top: 75px;
 }
+

@@ -100,6 +100,21 @@ import { BehaviorSubject } from 'rxjs'
   ]
 })
 export class AppComponent implements AfterViewInit,OnInit,AfterContentInit{
+  particlesOptions = {
+    particles: {
+      color: {
+        value: [ '#ff0000', '#0000ff' ]
+      },
+      lineLinked: {
+        enable: true,
+        color: 'random'
+      },
+      move: {
+        enable: true,
+        speed: 5
+      }
+    }
+  };
   loggedin$ : BehaviorSubject<boolean>
   constructor(private authServ:AuthService,private adminServ: AutoAdminPageService,
     private mobileViewSer:MobileViewService,private router:Router) {

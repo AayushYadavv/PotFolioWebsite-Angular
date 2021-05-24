@@ -13,7 +13,7 @@ export class ServerCommService {
     'Content-Type',
     'application/x-www-form-urlencoded'
   );
-  apiRootLink = 'https://21sa.online';
+  apiRootLink = 'https://api.aayushyadav.in';
 
   constructor( private http:HttpClient) { }
   profileUpload(formData:FormData){
