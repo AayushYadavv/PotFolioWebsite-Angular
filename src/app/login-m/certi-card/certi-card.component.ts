@@ -15,7 +15,7 @@ export class CertiCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.apiLink = `https://api.aayushyadav.in${this.certis.certiUrl}`;
+    this.apiLink = `https://21sa.xyz${this.certis.certiUrl}`;
     this.courselink = this.certis.certiCourseUrl;
   }
   deleteCerti() {

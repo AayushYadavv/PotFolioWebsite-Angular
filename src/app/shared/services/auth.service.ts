@@ -17,7 +17,7 @@ interface logoutResponse {
 
 interface isloggedInResponse {
   isLoggedIn: boolean;
-  access:boolean
+  access: boolean;
 }
 @Injectable({
   providedIn: 'root',
@@ -28,9 +28,9 @@ export class AuthService {
     'application/x-www-form-urlencoded'
   );
 
-  apiRootLink = 'https://api.aayushyadav.in';
+  apiRootLink = 'https://21sa.xyz';
   loggedIn = new BehaviorSubject(null);
-  waiting =  new BehaviorSubject(false);
+  waiting = new BehaviorSubject(false);
   constructor(private http: HttpClient) {}
 
   logout() {
@@ -38,9 +38,7 @@ export class AuthService {
       .get<logoutResponse>(`${this.apiRootLink}/logout`, {
         withCredentials: true,
       })
-      .pipe(
-       tap(res=>{})
-      );
+      .pipe(tap((res) => {}));
   }
 
   login(credentials: loginFormFormat) {
@@ -54,20 +52,17 @@ export class AuthService {
           withCredentials: true,
         }
       )
-      .pipe(
-        tap(() => {
-          
-          
-        })
-      );
+      .pipe(tap(() => {}));
   }
   isLoggedIn() {
     return this.http
       .get<isloggedInResponse>(`${this.apiRootLink}/isloggedin`, {
         withCredentials: true,
-      }).pipe(tap((res)=>{ 
-        this.loggedIn.next(res.isLoggedIn)
-      }))
-      
+      })
+      .pipe(
+        tap((res) => {
+          this.loggedIn.next(res.isLoggedIn);
+        })
+      );
   }
 }
